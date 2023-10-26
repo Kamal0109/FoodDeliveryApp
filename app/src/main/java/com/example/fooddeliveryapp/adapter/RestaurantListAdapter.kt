@@ -15,7 +15,7 @@ import java.util.Calendar
 import java.util.Date
 import java.util.Locale
 
-class RestaurantListAdapter(val restaurantList : List<RestaurantModel?>?): RecyclerView.Adapter<RestaurantListAdapter.MyViewHolder>() {
+class RestaurantListAdapter(val restaurantList : List<RestaurantModel?>?, val clickListener: RestaurantListClickListener): RecyclerView.Adapter<RestaurantListAdapter.MyViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RestaurantListAdapter.MyViewHolder {
         val view : View = LayoutInflater.from(parent.context).inflate(R.layout.recycler_restaurant_list_row,parent,false)
         return MyViewHolder(view)
@@ -30,6 +30,9 @@ class RestaurantListAdapter(val restaurantList : List<RestaurantModel?>?): Recyc
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
 
         holder.bind(restaurantList?.get(position))
+        holder.itemView.setOnClickListener {
+            clickListener.onItemClick(restaurantList?.get(position)!!)
+        }
 
     }
     inner class MyViewHolder(view: View): RecyclerView.ViewHolder(view) {

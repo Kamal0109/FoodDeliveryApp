@@ -23,6 +23,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -50,4 +51,6 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.16.0'
     // to convert to object
     implementation 'com.google.code.gson:gson:2.10.1'
+    // payment gateway
+
 }

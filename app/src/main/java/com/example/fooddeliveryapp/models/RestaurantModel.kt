@@ -3,7 +3,8 @@ package com.example.fooddeliveryapp.models
 import android.os.Parcel
 import android.os.Parcelable
 
-data class RestaurantModel (val name : String?,val address : String?,val delivery_charge : String?,val image : String?,val hours : Hours?,val menus: List<Menus?>?) :
+data class RestaurantModel (val name : String?, val address : String?, val delivery_charge : String?, val image : String?, val hours : Hours?,
+                            var menus: List<Menus?>?) :
     Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString(),
@@ -77,7 +78,7 @@ data class Hours(val Sunday: String?,val Monday: String?,val Tuesday: String?,va
     }
 }
 
-data class Menus(val name:String?,val price: Float?,val url: String?,var totalIncart: Int) :
+data class Menus(val name:String?,val price: Float?,val url: String?,var totalInCart: Int) :
     Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString(),
@@ -91,7 +92,7 @@ data class Menus(val name:String?,val price: Float?,val url: String?,var totalIn
         parcel.writeString(name)
         parcel.writeValue(price)
         parcel.writeString(url)
-        parcel.writeInt(totalIncart)
+        parcel.writeInt(totalInCart)
     }
 
     override fun describeContents(): Int {

@@ -28,7 +28,7 @@ class RestaurantActivity : AppCompatActivity(),RestaurantListAdapter.RestaurantL
     private fun initRecyclerView(restaurantList: List<RestaurantModel?>?){
         val recyclerViewRestaurant = findViewById<RecyclerView>(R.id.recyclerViewRestaurant)
         recyclerViewRestaurant.layoutManager = LinearLayoutManager(this)
-        val adapter = RestaurantListAdapter(restaurantList)
+        val adapter = RestaurantListAdapter(restaurantList,this)
         recyclerViewRestaurant.adapter=adapter
     }
 

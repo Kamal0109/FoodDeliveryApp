@@ -18,11 +18,15 @@
         android:theme="@style/Theme.FoodDeliveryApp"
         tools:targetApi="31">
         <activity
+            android:name=".SuccessOrderActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PlaceYourOrderActivity"
+            android:exported="false" />
+        <activity
             android:name=".HomeActivity"
-            android:exported="true"
-            android:theme="@style/Theme.HomeScreen">
-
-        </activity>
+            android:exported="false"
+            android:theme="@style/Theme.HomeScreen" />
         <activity
             android:name=".ReataurantMenuActivity"
             android:exported="false" />
@@ -32,11 +36,11 @@
         <activity
             android:name=".LoginActivity"
             android:exported="false"
-            android:theme="@style/Theme.LoginAndSignUp"/>
+            android:theme="@style/Theme.LoginAndSignUp" />
         <activity
             android:name=".SignUpActivity"
             android:exported="false"
-            android:theme="@style/Theme.LoginAndSignUp"/>
+            android:theme="@style/Theme.LoginAndSignUp" />
         <activity
             android:name=".RestaurantActivity"
             android:exported="false" />
@@ -44,17 +48,15 @@
             android:name=".SplashScreen"
             android:exported="true"
             android:theme="@style/Theme.SplashScreenApp">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true"
+            android:exported="false"
             android:theme="@style/Theme.SplashScreenApp" />
     </application>
 
